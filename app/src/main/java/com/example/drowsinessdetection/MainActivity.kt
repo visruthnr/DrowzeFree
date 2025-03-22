@@ -147,77 +147,187 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startCamera() {
+        // First, set up faceMesh before camera setup
+        setupFaceMesh()
+        
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         
         cameraProviderFuture.addListener({
-            val cameraProvider = cameraProviderFuture.get()
-            
-            val preview = Preview.Builder().build()
-            preview.setSurfaceProvider(cameraPreview.surfaceProvider)
-            
             try {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, CameraSelector.DEFAULT_FRONT_CAMERA, preview)
+                val cameraProvider = cameraProviderFuture.get()
                 
-                // Initialize FaceMesh
-                setupFaceMesh()
+                // Create preview use case
+                val preview = Preview.Builder()
+                    .setTargetRotation(cameraPreview.display.rotation)
+                    .build()
+                
+                // Set the surface provider for the preview
+                preview.setSurfaceProvider(cameraPreview.surfaceProvider)
+                
+                // Define the image analysis use case to feed frames to MediaPipe
+                val imageAnalysis = ImageAnalysis.Builder()
+                    .setTargetRotation(cameraPreview.display.rotation)
+                    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                    .build()
+                
+                // Set up analyzer to process frames
+                imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(this)) { imageProxy ->
+                    try {
+                        if (faceMesh != null) {
+                            // Get timestamp for the frame
+                            val frameTime = System.currentTimeMillis()
+                            
+                            // Process the frame with FaceMesh
+                            faceMesh?.send(imageProxy)
+                            
+                            Log.d("MainActivity", "Frame processed at $frameTime")
+                        }
+                    } catch (e: Exception) {
+                        Log.e("MainActivity", "Error processing camera frame", e)
+                    } finally {
+                        // Always close the imageProxy to release the frame
+                        imageProxy.close()
+                    }
+                }
+                
+                // Unbind previous use cases before rebinding
+                cameraProvider.unbindAll()
+                
+                // Bind the camera use cases to lifecycle
+                val camera = cameraProvider.bindToLifecycle(
+                    this, 
+                    CameraSelector.DEFAULT_FRONT_CAMERA,
+                    preview,
+                    imageAnalysis
+                )
+                
+                Log.d("MainActivity", "Camera setup completed successfully")
             } catch (e: Exception) {
                 Log.e("MainActivity", "Camera binding failed", e)
+                runOnUiThread {
+                    Toast.makeText(this, "Failed to start camera: ${e.message}", Toast.LENGTH_LONG).show()
+                    detectionSwitch.isChecked = false
+                }
             }
         }, ContextCompat.getMainExecutor(this))
     }
 
     private fun setupFaceMesh() {
-        faceMesh = FaceMesh(
-            this,
-            FaceMeshOptions.builder()
-                .setStaticImageMode(false)
-                .setRefineLandmarks(true)
-                .setRunOnGpu(true)
+        try {
+            // Create options for FaceMesh with optimal parameters
+            val options = FaceMeshOptions.builder()
+                .setStaticImageMode(false)      // We're processing video frames
+                .setRefineLandmarks(true)       // Get more precise landmarks
+                .setMaxNumFaces(1)              // Focus on just the driver
+                .setRunOnGpu(true)              // Use GPU for better performance
                 .build()
-        )
-        
-        faceMesh?.setResultListener { faceMeshResult ->
-            processFaceMeshResult(faceMeshResult)
-        }
-        
-        // Set error listener
-        faceMesh?.setErrorListener { message, e ->
-            Log.e("MainActivity", "MediaPipe Face Mesh error: $message", e)
+            
+            // Initialize FaceMesh with options
+            faceMesh = FaceMesh(this, options)
+            
+            // Load the model from assets
+            // This ensures we're using our custom model
+            val assetManager = assets
+            val modelPath = "face_landmarker.task"
+            
+            // Log model loading attempt
+            Log.d("MainActivity", "Loading FaceMesh model from assets: $modelPath")
+            
+            // Point the faceMesh to use our custom model
+            if (assetManager.list("")?.contains(modelPath) == true) {
+                faceMesh?.loadAsset(this, modelPath)
+                Log.d("MainActivity", "FaceMesh model loaded successfully")
+            } else {
+                Log.e("MainActivity", "FaceMesh model not found in assets")
+            }
+            
+            // Set up result listener with enhanced error handling
+            faceMesh?.setResultListener { faceMeshResult ->
+                if (faceMeshResult != null) {
+                    val faceCount = faceMeshResult.multiFaceLandmarks().size
+                    Log.d("MainActivity", "Received face mesh result: $faceCount faces")
+                    processFaceMeshResult(faceMeshResult)
+                } else {
+                    Log.e("MainActivity", "Received null FaceMesh result")
+                    runOnUiThread {
+                        detectionStatusText.text = "Detection error"
+                    }
+                }
+            }
+            
+            // Set error listener with descriptive logging
+            faceMesh?.setErrorListener { message, e ->
+                Log.e("MainActivity", "MediaPipe Face Mesh error: $message", e)
+                runOnUiThread {
+                    detectionStatusText.text = "Detection error: ${e?.message ?: message}"
+                }
+            }
+            
+            Log.d("MainActivity", "FaceMesh setup completed")
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Failed to setup FaceMesh", e)
+            runOnUiThread {
+                Toast.makeText(this, "Failed to initialize drowsiness detection: ${e.message}", Toast.LENGTH_LONG).show()
+                detectionSwitch.isChecked = false
+            }
         }
     }
 
     private fun processFaceMeshResult(result: FaceMeshResult) {
-        if (result.multiFaceLandmarks().isEmpty()) {
-            // No face detected
-            runOnUiThread {
-                detectionStatusText.text = "No face detected"
+        try {
+            if (result.multiFaceLandmarks().isEmpty()) {
+                // No face detected
+                Log.d("MainActivity", "No face detected in FaceMesh result")
+                runOnUiThread {
+                    detectionStatusText.text = "No face detected"
+                    isDrowsy = false
+                }
+                return
             }
-            return
-        }
-        
-        // Get landmarks for the first face
-        val landmarks = result.multiFaceLandmarks()[0].landmarkList
-        
-        // Analyze eye state to detect drowsiness
-        // Here we would use specific landmarks for left and right eyes
-        // This is a simplified implementation - in a real app, you'd need more sophisticated analysis
-        
-        // For example, checking eye aspect ratio (EAR)
-        val leftEyeAspectRatio = calculateEyeAspectRatio(landmarks, 362, 385, 387, 373, 380, 374)
-        val rightEyeAspectRatio = calculateEyeAspectRatio(landmarks, 33, 160, 158, 133, 153, 144)
-        
-        // The threshold could be adjusted based on calibration
-        val earThreshold = 0.2
-        val avgEAR = (leftEyeAspectRatio + rightEyeAspectRatio) / 2
-        
-        isDrowsy = avgEAR < earThreshold
-        
-        runOnUiThread {
-            if (isDrowsy) {
-                detectionStatusText.text = "Drowsiness detected!"
-            } else {
-                detectionStatusText.text = "Alert"
+            
+            // Get landmarks for the first face
+            val landmarks = result.multiFaceLandmarks()[0].landmarkList
+            Log.d("MainActivity", "Processing ${landmarks.size} face landmarks")
+            
+            // Using MediaPipe FaceMesh landmark indices
+            // Left eye points (landmarks 362, 385, 387, 373, 380, 374)
+            // Right eye points (landmarks 33, 160, 158, 133, 153, 144)
+            // These points form the eye contour for calculating EAR
+            
+            try {
+                // Calculate Eye Aspect Ratio (EAR)
+                val leftEyeAspectRatio = calculateEyeAspectRatio(landmarks, 362, 385, 387, 373, 380, 374)
+                val rightEyeAspectRatio = calculateEyeAspectRatio(landmarks, 33, 160, 158, 133, 153, 144)
+                
+                // The EAR threshold based on research papers is typically around 0.2-0.25
+                // Lower values mean eyes are more closed
+                val earThreshold = 0.22 // Slightly adjusted for better sensitivity
+                val avgEAR = (leftEyeAspectRatio + rightEyeAspectRatio) / 2
+                
+                Log.d("MainActivity", "Left EAR: $leftEyeAspectRatio, Right EAR: $rightEyeAspectRatio, Avg: $avgEAR")
+                
+                // Determine drowsiness state
+                isDrowsy = avgEAR < earThreshold
+                
+                runOnUiThread {
+                    if (isDrowsy) {
+                        detectionStatusText.text = "Drowsiness detected! EAR: ${String.format("%.2f", avgEAR)}"
+                    } else {
+                        detectionStatusText.text = "Alert (EAR: ${String.format("%.2f", avgEAR)})"
+                    }
+                }
+            } catch (e: IndexOutOfBoundsException) {
+                Log.e("MainActivity", "Error accessing face landmarks", e)
+                runOnUiThread {
+                    detectionStatusText.text = "Detection error"
+                    isDrowsy = false
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error processing face mesh result", e)
+            runOnUiThread {
+                detectionStatusText.text = "Processing error"
+                isDrowsy = false
             }
         }
     }
@@ -226,26 +336,49 @@ class MainActivity : AppCompatActivity() {
         landmarks: List<com.google.mediapipe.formats.proto.LandmarkProto.NormalizedLandmark>,
         p1: Int, p2: Int, p3: Int, p4: Int, p5: Int, p6: Int
     ): Float {
-        val point1 = landmarks[p1]
-        val point2 = landmarks[p2]
-        val point3 = landmarks[p3]
-        val point4 = landmarks[p4]
-        val point5 = landmarks[p5]
-        val point6 = landmarks[p6]
-        
-        val verticalDist1 = distance(point2, point6)
-        val verticalDist2 = distance(point3, point5)
-        val horizontalDist = distance(point1, point4)
-        
-        return (verticalDist1 + verticalDist2) / (2 * horizontalDist)
+        try {
+            // Extract eye corner and eyelid points
+            val point1 = landmarks[p1] // Eye corner
+            val point2 = landmarks[p2] // Upper eyelid
+            val point3 = landmarks[p3] // Upper eyelid
+            val point4 = landmarks[p4] // Eye corner
+            val point5 = landmarks[p5] // Lower eyelid
+            val point6 = landmarks[p6] // Lower eyelid
+            
+            // Calculate vertical distances (from upper to lower eyelid)
+            val verticalDist1 = distance(point2, point6)
+            val verticalDist2 = distance(point3, point5)
+            
+            // Calculate horizontal distance (eye width)
+            val horizontalDist = distance(point1, point4)
+            
+            // Eye Aspect Ratio formula: average of vertical distances divided by horizontal distance
+            // When eyes are closed, EAR approaches 0
+            // Regular open eyes typically have EAR around 0.25-0.3
+            if (horizontalDist < 0.001f) {
+                // Avoid division by zero
+                return 0.3f // Default "open eye" value
+            }
+            
+            return (verticalDist1 + verticalDist2) / (2 * horizontalDist)
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error calculating EAR", e)
+            return 0.3f // Default to "open" if calculation fails
+        }
     }
 
     private fun distance(p1: com.google.mediapipe.formats.proto.LandmarkProto.NormalizedLandmark, 
                          p2: com.google.mediapipe.formats.proto.LandmarkProto.NormalizedLandmark): Float {
-        return Math.sqrt(
-            Math.pow((p1.x - p2.x).toDouble(), 2.0) +
-            Math.pow((p1.y - p2.y).toDouble(), 2.0)
-        ).toFloat()
+        try {
+            // Euclidean distance formula in 2D space
+            return Math.sqrt(
+                Math.pow((p1.x - p2.x).toDouble(), 2.0) +
+                Math.pow((p1.y - p2.y).toDouble(), 2.0)
+            ).toFloat()
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error calculating distance", e)
+            return 0.1f // Default small distance
+        }
     }
 
     private fun sendSOSMessages() {
@@ -313,10 +446,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Resume detection if it was active
+        if (detectionSwitch.isChecked && !isDrowsinessDetectionRunning) {
+            startDrowsinessDetection()
+        }
+    }
+    
+    override fun onPause() {
+        // Pause detection but don't reset the switch
+        if (isDrowsinessDetectionRunning) {
+            faceMesh?.close()
+            isDrowsinessDetectionRunning = false
+        }
+        super.onPause()
+    }
+
     override fun onDestroy() {
-        super.onDestroy()
+        // Clean up all resources
         faceMesh?.close()
         drowsinessChecker?.shutdown()
         executor.shutdown()
+        super.onDestroy()
     }
 }
