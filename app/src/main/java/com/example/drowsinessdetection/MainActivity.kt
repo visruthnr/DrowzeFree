@@ -286,8 +286,9 @@ class MainActivity : AppCompatActivity() {
                         inputStream.copyTo(outputStream)
                     }
                     // Use the file path instead of loadAsset which doesn't exist
-                    // Initialize FaceMesh with the model file
-faceMesh = FaceMesh.createFromFile(this, modelFile.absolutePath)
+                    // Load the model file into FaceMesh
+                    faceMesh?.setModelPath(modelFile.absolutePath)
+                    faceMesh?.loadModel()
                     Log.d("MainActivity", "FaceMesh model loaded successfully")
                 }
             } else {
