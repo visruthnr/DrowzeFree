@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import com.google.mediapipe.solutions.facemesh.FaceMesh
 import com.google.mediapipe.solutions.facemesh.FaceMeshOptions
 import com.google.mediapipe.solutions.facemesh.FaceMeshResult
+import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.android.material.button.MaterialButton
 import android.view.SurfaceView
 import android.widget.TextView
@@ -285,10 +286,14 @@ class MainActivity : AppCompatActivity() {
                     FileOutputStream(modelFile).use { outputStream ->
                         inputStream.copyTo(outputStream)
                     }
-                    // Use the file path instead of loadAsset which doesn't exist
-                    // Load the model file into FaceMesh
-                    faceMesh?.setModelPath(modelFile.absolutePath)
-                    faceMesh?.loadModel()
+                    // Initialize FaceMesh with the model file
+                    val baseOptions = BaseOptions.builder()
+                        .setModelAssetPath("face_landmarker.task")
+                        .build()
+                    val options = FaceMeshOptions.builder()
+                        .setBaseOptions(baseOptions)
+                        .build()
+                    faceMesh = FaceMesh.create(this, options)
                     Log.d("MainActivity", "FaceMesh model loaded successfully")
                 }
             } else {
