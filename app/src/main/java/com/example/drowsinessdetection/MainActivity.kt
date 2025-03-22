@@ -447,8 +447,18 @@ class MainActivity : AppCompatActivity() {
         if (isSendingSOS) return
         
         isSendingSOS = true
+        // Change UI to red alert state
         runOnUiThread {
-            alertStatusText.text = "Sending SOS messages!"
+            alertStatusText.text = "SENDING SOS MESSAGES!"
+            alertStatusText.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark))
+            // Vibrate to provide feedback
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as android.os.Vibrator
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                vibrator.vibrate(android.os.VibrationEffect.createOneShot(1000, android.os.VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                @Suppress("DEPRECATION")
+                vibrator.vibrate(1000)
+            }
         }
         
         val contacts = Utils.getContacts(this)
@@ -461,23 +471,44 @@ class MainActivity : AppCompatActivity() {
             return
         }
         
-        val message = "DRIVER DROWSINESS ALERT! The driver appears to be falling asleep while driving. This is an automated emergency message."
+        // Enhanced message with more information
+        val message = "DRIVER DROWSINESS ALERT! The driver appears to be falling asleep while driving. " +
+                "This is an automated emergency message sent at ${java.text.SimpleDateFormat("HH:mm:ss", 
+                java.util.Locale.getDefault()).format(java.util.Date())}. " +
+                "Driver has been drowsy for $drowsySeconds seconds. Please try to contact them immediately."
         
-        try {
-            for (contact in contacts) {
-                Utils.sendSMS(contact.phoneNumber, message)
+        // Use a coroutine to send messages in background
+        executor.execute {
+            try {
+                Log.d("MainActivity", "Sending SOS messages to ${contacts.size} contacts")
+                
+                // Send messages to all contacts
+                for (contact in contacts) {
+                    Utils.sendSMS(contact.phoneNumber, message)
+                    // Small delay between messages to avoid system throttling
+                    Thread.sleep(300)
+                }
+                
+                runOnUiThread {
+                    Toast.makeText(this, "SOS messages sent to ${contacts.size} contacts", Toast.LENGTH_LONG).show()
+                    alertStatusText.text = "SOS messages sent!"
+                    
+                    // Play alert sound
+                    try {
+                        val notification = android.media.RingtoneManager.getDefaultUri(android.media.RingtoneManager.TYPE_NOTIFICATION)
+                        val ringtone = android.media.RingtoneManager.getRingtone(this, notification)
+                        ringtone.play()
+                    } catch (e: Exception) {
+                        Log.e("MainActivity", "Error playing notification sound", e)
+                    }
+                }
+            } catch (e: Exception) {
+                runOnUiThread {
+                    Toast.makeText(this, "Failed to send SOS: ${e.message}", Toast.LENGTH_LONG).show()
+                    alertStatusText.text = "Failed to send SOS"
+                }
+                Log.e("MainActivity", "Error sending SOS", e)
             }
-            
-            runOnUiThread {
-                Toast.makeText(this, "SOS messages sent to ${contacts.size} contacts", Toast.LENGTH_LONG).show()
-                alertStatusText.text = "SOS messages sent!"
-            }
-        } catch (e: Exception) {
-            runOnUiThread {
-                Toast.makeText(this, "Failed to send SOS: ${e.message}", Toast.LENGTH_LONG).show()
-                alertStatusText.text = "Failed to send SOS"
-            }
-            Log.e("MainActivity", "Error sending SOS", e)
         }
         
         // Reset SOS flag after 30 seconds to allow sending again if needed
@@ -485,6 +516,7 @@ class MainActivity : AppCompatActivity() {
             isSendingSOS = false
             runOnUiThread {
                 alertStatusText.text = ""
+                alertStatusText.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark)) // Reset color
             }
         }, 30, TimeUnit.SECONDS)
     }
