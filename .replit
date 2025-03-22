@@ -1,4 +1,4 @@
-modules = ["kotlin", "java-17"]
+modules = ["kotlin", "java-17", "python-3.11"]
 
 [nix]
 channel = "stable-24_05"
@@ -31,8 +31,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd app && ./gradlew assembleDebug"
-waitForPort = 5000
+args = "./gradlew --no-daemon --max-workers 2 -Dorg.gradle.jvmargs=\"-Xmx1024m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError\" assembleDebug"
 
 [[workflows.workflow]]
 name = "android"
@@ -46,7 +45,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "./gradlew installDebug && adb shell am start -n com.example.drowsinessdetection/.MainActivity"
+args = "./gradlew --no-daemon --max-workers 2 -Dorg.gradle.jvmargs=\"-Xmx512m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError\" installDebug && adb shell am start -n com.example.drowsinessdetection/.MainActivity"
 
 [deployment]
-run = ["sh", "-c", "cd app && ./gradlew assembleDebug"]
+run = ["sh", "-c", "./gradlew --no-daemon --max-workers 2 -Dorg.gradle.jvmargs=\"-Xmx1024m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError\" assembleDebug"]

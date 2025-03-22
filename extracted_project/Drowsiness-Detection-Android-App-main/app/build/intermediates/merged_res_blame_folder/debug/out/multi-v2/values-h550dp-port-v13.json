@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.google.mediapipe.examples.facelandmarker.app-mergeDebugResources-53:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\0d6216df8eab1bd6b4e016d0bc4fdceb\\transformed\\material-1.7.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

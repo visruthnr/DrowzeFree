@@ -1,29 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Drowsiness Detection</string>
-    
-    <!-- Main Activity -->
-    <string name="detection_status">Detection Status</string>
-    <string name="inactive">Detection Inactive</string>
-    <string name="awake">Awake</string>
-    <string name="controls">Controls</string>
-    <string name="enable_drowsiness_detection">Enable Drowsiness Detection</string>
-    <string name="manage_emergency_contacts">Manage Emergency Contacts</string>
-    <string name="status_indicator">Status Indicator</string>
-    
-    <!-- Contacts Activity -->
-    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="start_detection">Start Detection</string>
+    <string name="stop_detection">Stop Detection</string>
+    <string name="manage_contacts">Manage Emergency Contacts</string>
     <string name="add_contact">Add Contact</string>
-    <string name="delete_contact">Delete Contact</string>
-    <string name="contact_icon">Contact Icon</string>
-    <string name="no_emergency_contacts">No emergency contacts added yet. \nTap the + button to add contacts.</string>
-    <string name="back">Back</string>
-    
-    <!-- Detection Service -->
-    <string name="detection_service_running">Drowsiness detection is running</string>
-    <string name="detection_service_stopped">Drowsiness detection has been stopped</string>
-    
-    <!-- Alerts -->
-    <string name="sos_message_sent">SOS message sent to emergency contacts</string>
-    <string name="sos_sending_failed">Failed to send SOS message</string>
-    <string name="permission_needed">Permission required for this feature</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="alert_title">Drowsiness Detected</string>
+    <string name="alert_message">You appear to be drowsy. Stay alert or pull over!</string>
+    <string name="sending_sos">Sending SOS messages to emergency contacts...</string>
+    <string name="status_normal">Status: Normal</string>
+    <string name="status_drowsy">Status: DROWSY! WAKE UP!</string>
+    <string name="status_detection_off">Status: Detection Off</string>
+    <string name="permission_required">Camera permission is required for drowsiness detection</string>
+    <string name="sms_permission_required">SMS permission is required to send emergency messages</string>
+    <string name="location_permission_required">Location permission is required to include in emergency messages</string>
 </resources>
