@@ -1,0 +1,52 @@
+modules = ["kotlin"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Android App Build"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "android"
+
+[[workflows.workflow]]
+name = "Android App Build"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd app && ./gradlew assembleDebug"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "android"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./gradlew installDebug && adb shell am start -n com.example.drowsinessdetection/.MainActivity"
+
+[deployment]
+run = ["sh", "-c", "cd app && ./gradlew assembleDebug"]

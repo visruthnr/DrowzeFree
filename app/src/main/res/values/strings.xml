@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Drowsiness Detection</string>
+    
+    <!-- Main Activity -->
+    <string name="detection_status">Detection Status</string>
+    <string name="inactive">Detection Inactive</string>
+    <string name="awake">Awake</string>
+    <string name="controls">Controls</string>
+    <string name="enable_drowsiness_detection">Enable Drowsiness Detection</string>
+    <string name="manage_emergency_contacts">Manage Emergency Contacts</string>
+    <string name="status_indicator">Status Indicator</string>
+    
+    <!-- Contacts Activity -->
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="no_emergency_contacts">No emergency contacts added yet. \nTap the + button to add contacts.</string>
+    <string name="back">Back</string>
+    
+    <!-- Detection Service -->
+    <string name="detection_service_running">Drowsiness detection is running</string>
+    <string name="detection_service_stopped">Drowsiness detection has been stopped</string>
+    
+    <!-- Alerts -->
+    <string name="sos_message_sent">SOS message sent to emergency contacts</string>
+    <string name="sos_sending_failed">Failed to send SOS message</string>
+    <string name="permission_needed">Permission required for this feature</string>
+</resources>
