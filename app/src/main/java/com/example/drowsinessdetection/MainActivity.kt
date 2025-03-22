@@ -8,9 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.mediapipe.solutions.facemesh.FaceMesh
-import com.google.mediapipe.solutions.facemesh.FaceMeshOptions
-import com.google.mediapipe.solutions.facemesh.FaceMeshResult
+import com.google.mediapipe.tasks.vision.facelandmarker.FaceLandmarker
+import com.google.mediapipe.tasks.vision.facelandmarker.FaceLandmarkerResult
+import com.google.mediapipe.tasks.vision.core.RunningMode
+import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.android.material.button.MaterialButton
 import android.view.SurfaceView
@@ -260,15 +261,17 @@ class MainActivity : AppCompatActivity() {
     private fun setupFaceMesh() {
         try {
             // Create options for FaceMesh with optimal parameters
+            val baseOptions = BaseOptions.builder()
+                .setModelAssetPath("face_landmarker.task")
+                .build()
             val options = FaceMeshOptions.builder()
-                .setStaticImageMode(false)      // We're processing video frames
-                .setRefineLandmarks(true)       // Get more precise landmarks
-                .setMaxNumFaces(1)              // Focus on just the driver
-                .setRunOnGpu(true)              // Use GPU for better performance
+                .setBaseOptions(baseOptions)
+                .setRunningMode(RunningMode.LIVE_STREAM)
+                .setNumFaces(1)
                 .build()
             
             // Initialize FaceMesh with options
-            faceMesh = FaceMesh(this, options)
+            faceMesh = FaceMesh.createFromOptions(this, options)
             
             // Load the model from assets
             // This ensures we're using our custom model
