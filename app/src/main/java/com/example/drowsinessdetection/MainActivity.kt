@@ -28,10 +28,20 @@ import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
-import androidx.camera.core.*
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.Preview
+import androidx.camera.core.ImageProxy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
-import androidx.core.content.ContextCompat.getSystemService
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.ImageFormat
+import android.graphics.Rect
+import android.graphics.YuvImage
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 import com.google.common.util.concurrent.ListenableFuture
 
 class MainActivity : AppCompatActivity() {
@@ -177,10 +187,14 @@ class MainActivity : AppCompatActivity() {
                             // Get timestamp for the frame
                             val frameTime = System.currentTimeMillis()
                             
-                            // Process the frame with FaceMesh
-                            faceMesh?.send(imageProxy)
-                            
-                            Log.d("MainActivity", "Frame processed at $frameTime")
+                            // Convert ImageProxy to Bitmap for FaceMesh processing
+                            val bitmap = imageProxyToBitmap(imageProxy)
+                            if (bitmap != null) {
+                                // Process the frame with FaceMesh
+                                faceMesh?.send(bitmap)
+                                Log.d("MainActivity", "Frame processed at $frameTime")
+                                bitmap.recycle() // Recycle bitmap to prevent memory leaks
+                            }
                         }
                     } catch (e: Exception) {
                         Log.e("MainActivity", "Error processing camera frame", e)
@@ -211,6 +225,36 @@ class MainActivity : AppCompatActivity() {
             }
         }, ContextCompat.getMainExecutor(this))
     }
+    
+    // Helper function to convert ImageProxy to Bitmap for MediaPipe
+    private fun imageProxyToBitmap(imageProxy: ImageProxy): Bitmap? {
+        val yBuffer = imageProxy.planes[0].buffer
+        val uBuffer = imageProxy.planes[1].buffer
+        val vBuffer = imageProxy.planes[2].buffer
+        
+        val ySize = yBuffer.remaining()
+        val uSize = uBuffer.remaining()
+        val vSize = vBuffer.remaining()
+        
+        val nv21 = ByteArray(ySize + uSize + vSize)
+        
+        // U and V are swapped
+        yBuffer.get(nv21, 0, ySize)
+        vBuffer.get(nv21, ySize, vSize)
+        uBuffer.get(nv21, ySize + vSize, uSize)
+        
+        val yuvImage = YuvImage(nv21, ImageFormat.NV21, imageProxy.width, imageProxy.height, null)
+        val out = ByteArrayOutputStream()
+        yuvImage.compressToJpeg(Rect(0, 0, yuvImage.width, yuvImage.height), 100, out)
+        val imageBytes = out.toByteArray()
+        
+        try {
+            return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error converting image to bitmap", e)
+            return null
+        }
+    }
 
     private fun setupFaceMesh() {
         try {
@@ -235,8 +279,16 @@ class MainActivity : AppCompatActivity() {
             
             // Point the faceMesh to use our custom model
             if (assetManager.list("")?.contains(modelPath) == true) {
-                faceMesh?.loadAsset(this, modelPath)
-                Log.d("MainActivity", "FaceMesh model loaded successfully")
+                // Load the model file from assets
+                assetManager.open(modelPath).use { inputStream ->
+                    val modelFile = File(cacheDir, "face_landmarker.task")
+                    FileOutputStream(modelFile).use { outputStream ->
+                        inputStream.copyTo(outputStream)
+                    }
+                    // Use the file path instead of loadAsset which doesn't exist
+                    faceMesh?.setModelPath(modelFile.absolutePath)
+                    Log.d("MainActivity", "FaceMesh model loaded successfully")
+                }
             } else {
                 Log.e("MainActivity", "FaceMesh model not found in assets")
             }
