@@ -62,14 +62,7 @@ A privacy-conscious Android app that detects **driver drowsiness** using real-ti
 
 ---
 
-## 🙋‍♂️ Author
 
-**Visruth N R**  
-B.Tech Computer Science and Design  
-Government Engineering College, Kozhikode  
-
-🔗 [GitHub @visruthnr](https://github.com/visruthnr)  
-🔗 [LinkedIn](https://www.linkedin.com/in/visruthnr)  
 
 
 
