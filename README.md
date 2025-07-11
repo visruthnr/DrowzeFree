@@ -70,7 +70,7 @@ Government Engineering College, Kozhikode
 
 🔗 [GitHub @visruthnr](https://github.com/visruthnr)  
 🔗 [LinkedIn](https://www.linkedin.com/in/visruthnr)  
-📫 Reach out: visruthnr@gmail.com
+
 
 
    
