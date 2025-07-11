@@ -1,0 +1,216 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.drowsinessdetection"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Permissions -->
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:5:5-65
+12-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:5:22-62
+13    <uses-permission android:name="android.permission.SEND_SMS" />
+13-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:6:5-67
+13-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:6:22-64
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:7:5-66
+14-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:7:22-63
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:8:5-79
+15-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:8:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:9:5-81
+16-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:9:22-78
+17    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+17-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:10:5-77
+17-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:10:22-74
+18
+19    <uses-feature android:name="android.hardware.camera" />
+19-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:12:5-60
+19-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:12:19-57
+20    <uses-feature
+20-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:13:5-95
+21        android:name="android.hardware.camera.autofocus"
+21-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:13:19-67
+22        android:required="false" />
+22-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:13:68-92
+23    <uses-feature
+23-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:14:5-90
+24        android:name="android.hardware.location.gps"
+24-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:14:19-63
+25        android:required="true" />
+25-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:14:64-87
+26    <uses-feature
+26-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:15:5-87
+27        android:name="android.hardware.telephony"
+27-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:15:19-60
+28        android:required="false" />
+28-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:15:61-85
+29
+30    <permission
+30-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+31        android:name="com.example.drowsinessdetection.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="com.example.drowsinessdetection.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+34-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+35    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+36    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+36-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
+36-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:25:22-76
+37    <uses-permission android:name="android.permission.INTERNET" />
+37-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
+37-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:26:22-64
+38
+39    <application
+39-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:18:5-49:19
+40        android:allowBackup="true"
+40-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:19:9-35
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\40dd66fca7cd05c2844d27447b49f585\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+42        android:debuggable="true"
+43        android:extractNativeLibs="false"
+44        android:icon="@mipmap/ic_launcher"
+44-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:20:9-43
+45        android:label="@string/app_name"
+45-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:21:9-41
+46        android:roundIcon="@mipmap/ic_launcher_round"
+46-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:22:9-54
+47        android:supportsRtl="true"
+47-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:23:9-35
+48        android:testOnly="true"
+49        android:theme="@style/AppTheme" >
+49-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:24:9-40
+50        <activity
+50-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:26:9-35:20
+51            android:name="com.example.drowsinessdetection.MainActivity"
+51-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:27:13-72
+52            android:exported="true"
+52-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:29:13-36
+53            android:screenOrientation="portrait" >
+53-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:30:13-49
+54            <intent-filter>
+54-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:31:13-34:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:32:17-69
+55-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:32:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:33:17-77
+57-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:33:27-74
+58            </intent-filter>
+59        </activity>
+60        <activity
+60-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:37:9-42:52
+61            android:name="com.example.drowsinessdetection.ContactsActivity"
+61-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:38:13-45
+62            android:exported="false"
+62-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:39:13-37
+63            android:label="Emergency Contacts"
+63-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:41:13-47
+64            android:parentActivityName="com.example.drowsinessdetection.MainActivity"
+64-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:40:13-55
+65            android:screenOrientation="portrait" />
+65-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:42:13-49
+66
+67        <service
+67-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:44:9-47:40
+68            android:name="com.example.drowsinessdetection.DetectionService"
+68-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:45:13-45
+69            android:enabled="true"
+69-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:46:13-35
+70            android:exported="false" />
+70-->E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\src\main\AndroidManifest.xml:47:13-37
+71
+72        <activity
+72-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\admin\.gradle\caches\transforms-3\f2f7e2fa5be92797ac430dadf85eb982\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:20:9-22:45
+73            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+73-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\admin\.gradle\caches\transforms-3\f2f7e2fa5be92797ac430dadf85eb982\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:20:19-85
+74            android:exported="false"
+74-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\admin\.gradle\caches\transforms-3\f2f7e2fa5be92797ac430dadf85eb982\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:22:19-43
+75            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+75-->[com.google.android.gms:play-services-base:18.2.0] C:\Users\admin\.gradle\caches\transforms-3\f2f7e2fa5be92797ac430dadf85eb982\transformed\jetified-play-services-base-18.2.0\AndroidManifest.xml:21:19-78
+76
+77        <meta-data
+77-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\db1a41136646e95574311ab3a5706d30\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+78            android:name="com.google.android.gms.version"
+78-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\db1a41136646e95574311ab3a5706d30\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+79            android:value="@integer/google_play_services_version" />
+79-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\db1a41136646e95574311ab3a5706d30\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+80
+81        <service
+81-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:24:9-33:19
+82            android:name="androidx.camera.core.impl.MetadataHolderService"
+82-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:25:13-75
+83            android:enabled="false"
+83-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:26:13-36
+84            android:exported="false" >
+84-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:27:13-37
+85            <meta-data
+85-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:30:13-32:89
+86                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+86-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:31:17-103
+87                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+87-->[androidx.camera:camera-camera2:1.2.2] C:\Users\admin\.gradle\caches\transforms-3\671f93fb226196026ccbb8d2cde1a6e0\transformed\jetified-camera-camera2-1.2.2\AndroidManifest.xml:32:17-86
+88        </service>
+89
+90        <provider
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+91            android:name="androidx.startup.InitializationProvider"
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+92            android:authorities="com.example.drowsinessdetection.androidx-startup"
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+93            android:exported="false" >
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+94            <meta-data
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+96                android:value="androidx.startup" />
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\0aeb88a2b7f3df8524aa03d8ee86aee7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\e9200648e437715c4a3f7468b75617ad\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+98-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\e9200648e437715c4a3f7468b75617ad\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+99                android:value="androidx.startup" />
+99-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\e9200648e437715c4a3f7468b75617ad\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+100        </provider>
+101
+102        <service
+102-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
+103            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+103-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:30:13-103
+104            android:exported="false" >
+104-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:31:13-37
+105            <meta-data
+105-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:32:13-34:39
+106                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+106-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:33:17-94
+107                android:value="cct" />
+107-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\b5e48eb4577dbd9aceb6db6e3d964442\transformed\jetified-transport-backend-cct-3.1.0\AndroidManifest.xml:34:17-36
+108        </service>
+109        <service
+109-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:26:9-30:19
+110            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+110-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:27:13-117
+111            android:exported="false"
+111-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:28:13-37
+112            android:permission="android.permission.BIND_JOB_SERVICE" >
+112-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:29:13-69
+113        </service>
+114
+115        <receiver
+115-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:32:9-34:40
+116            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+116-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:33:13-132
+117            android:exported="false" />
+117-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\admin\.gradle\caches\transforms-3\868aa47e2f708de17395be7dd0c8d3af\transformed\jetified-transport-runtime-3.1.0\AndroidManifest.xml:34:13-37
+118    </application>
+119
+120</manifest>

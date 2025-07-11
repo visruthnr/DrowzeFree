@@ -1,0 +1,6 @@
+com.example.drowsinessdetection.test.app-jetified-core-1.5.0-0 C:\Users\admin\.gradle\caches\transforms-3\6ae392dbe612411fb4c76214ef874175\transformed\jetified-core-1.5.0\res
+com.example.drowsinessdetection.test.app-jetified-annotation-experimental-1.3.0-1 C:\Users\admin\.gradle\caches\transforms-3\f8858f9624c305c8016a553bf643cae6\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.drowsinessdetection.test.app-androidTest-2 E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\build\generated\res\resValues\androidTest\debug
+com.example.drowsinessdetection.test.app-mergeDebugAndroidTestResources-3 E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.drowsinessdetection.test.app-mergeDebugAndroidTestResources-4 E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.drowsinessdetection.test.app-merged_res-5 E:\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\5\DrowsinessGuardian\app\build\intermediates\merged_res\debugAndroidTest

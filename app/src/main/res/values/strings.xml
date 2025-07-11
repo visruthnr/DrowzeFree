@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Drowsiness Detection</string>
+    <string name="app_name">DrowzeFree</string>
     <string name="detection_active">Drowsiness detection is active</string>
     <string name="detection_inactive">Drowsiness detection is inactive</string>
     <string name="add_contact">Add Contact</string>

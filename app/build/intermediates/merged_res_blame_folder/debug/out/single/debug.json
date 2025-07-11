@@ -1,0 +1,190 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\layout_activity_contacts.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\layout\\activity_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\raw_alarm_sound.mp3.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\raw\\alarm_sound.mp3"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-hdpi_icon.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxxhdpi_icon_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxxhdpi\\icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xhdpi_icon.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxhdpi_icon_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxhdpi\\icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxhdpi_icon_foreground.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxhdpi\\icon_foreground.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-hdpi_icon.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-hdpi/icon.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxxhdpi_icon.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxxhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xhdpi_icon_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xhdpi\\icon_round.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xhdpi_icon_foreground.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xhdpi\\icon_foreground.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\drawable_ic_contact.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\drawable\\ic_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\layout_item_contact.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\layout\\item_contact.xml"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-anydpi-v26_icon.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-anydpi-v26\\icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\raw_alert_sound.txt.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\raw\\alert_sound.txt"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-anydpi-v26_icon_round.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-anydpi-v26\\icon_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\drawable_ic_notification.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\drawable\\ic_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-mdpi_icon.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-mdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-hdpi_icon_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-hdpi\\icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-hdpi_icon_foreground.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-hdpi\\icon_foreground.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.example.drowsinessdetection.app-merged_res-34:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.drowsinessdetection.app-main-36:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxhdpi_icon.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-mdpi_icon_foreground.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-mdpi\\icon_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-xxxhdpi_icon_foreground.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-xxxhdpi\\icon_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\drawable_button_background.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\drawable\\button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-mdpi_icon_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-mdpi\\icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-merged_res-34:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.3\\com.example.drowsinessdetection.app-main-36:\\mipmap-hdpi\\ic_launcher.png"
+    }
+]

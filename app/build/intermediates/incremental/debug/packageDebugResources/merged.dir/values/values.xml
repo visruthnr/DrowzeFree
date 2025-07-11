@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#03A9F4</color>
+    <color name="black">#000000</color>
+    <color name="error_red">#F44336</color>
+    <color name="primary">#5C6BC0</color>
+    <color name="primary_dark">#3949AB</color>
+    <color name="primary_light">#8E99F3</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_contact">Add Contact</string>
+    <string name="alert_failed">Failed to send alert</string>
+    <string name="alert_message">EMERGENCY ALERT: Driver drowsiness detected!</string>
+    <string name="alert_sent">Alert sent to emergency contacts</string>
+    <string name="app_name">DrowzeFree</string>
+    <string name="detection_active">Drowsiness detection is active</string>
+    <string name="detection_inactive">Drowsiness detection is inactive</string>
+    <string name="manage_contacts">Manage Emergency Contacts</string>
+    <string name="no_contacts">No emergency contacts added yet</string>
+    <string name="permissions_required">Camera and SMS permissions are required</string>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>
