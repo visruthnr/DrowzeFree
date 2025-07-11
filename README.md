@@ -45,3 +45,18 @@ A privacy-conscious Android app that detects **driver drowsiness** using real-ti
 1. Clone the repo:
    ```bash
    git clone https://github.com/visruthnr/DrowzeFree.git
+   ```
+
+2. Open the project in **Android Studio**
+
+3. Connect a real Android device via USB
+
+4. Run the app and **grant all requested permissions**
+
+5. Tap **“Manage Contacts”** to add emergency numbers
+
+6. The app starts detecting automatically —  
+   if drowsiness is detected continuously, **SOS will be triggered**
+
+
+   
